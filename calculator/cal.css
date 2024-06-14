@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+.box {
+  /* border: 1px solid black; */
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+button {
+  width: 3rem;
+  height: 3rem;
+  margin: 4px 0;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #333;
+  color: #efefef;
+}
+.signs {
+  background-color: rgb(255 159 10);
+  color: #efefef;
+}
+.input {
+  height: 3rem;
+  width: 13rem;
+  outline: none;
+  margin-bottom: 1rem;
+}
