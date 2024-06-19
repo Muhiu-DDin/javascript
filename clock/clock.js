@@ -1,75 +1,31 @@
+let hr = document.querySelector(".hour");
+let min = document.querySelector(".min");
+let sec = document.querySelector(".sec");
+let dateElement = document.querySelector(".dateElement");
+let sessionElement = document.querySelector(".session");
 
-// function showTime() {
-//     var t = new Date;
-//     var h = t.getHours();
-//     var m = t.getMinutes();
-//     var s = t.getSeconds();
-//     var session = "AM";
+function updateClock() {
+    let date = new Date();
+    let hour = String(date.getHours()).padStart(2, '0');
+    let minute = String(date.getMinutes()).padStart(2, "0");
+    let second = String(date.getSeconds()).padStart(2, "0");
+    let session = "AM";
+    let options = { year: 'numeric' , weekday: 'long', month: 'long', day: 'numeric' };
+    let dateString = date.toLocaleDateString('en-US', options);
 
-//     if(h < 10){
-//         h = "0" + h;
-//     }
-
-//     if(m < 10){
-//         m = "0" + m;
-//     }
-//     if(s < 10){
-//         s = "0" + s;
-//     }
-//     if(h > 12){
-//        h = h - 12;
-//     }
-
-//     if(h >= 12){
-//         session = "PM";
-//     }
-
-//     var time = h + " : " + m + " : " + s + " " + session ;
-
-//     var object = document.getElementsByClassName("clock")[0];
-//     object.innerText = time;
-//     setTimeout(showTime , 1000);
-// }
-
-// --------------------------
-
-
-var hour_html = document.getElementById("hour");
-var minute_html = document.getElementById("minute");
-var second_html = document.getElementById("second");
-var session_html = document.getElementById("session");
-
-setInterval(function () {
-
-    var time = new Date();
-    var h = time.getHours();
-    var m = time.getMinutes();
-    var s = time.getSeconds();
-    var session = "AM";
-
-    if (h >= 12) {
+    if (hour >= 12) {
         session = "PM";
     }
-
-    // this statement is responsible for removing 24 hour format
-    if (h > 12) {
-        h = h - 12;
+    if (hour > 12) {
+        hour = hour - 12;
     }
 
-    if (h < 10) {
-        h = "0" + h;
-    }
-    if (m < 10) {
-        m = "0" + m;
-    }
-    if (s < 10) {
-        s = "0" + s;
-    }
-   
-    hour_html.innerText = h;
-    minute_html.innerText = m;
-    second_html.innerText = s;
-    session_html.innerText = session;
+    hr.innerHTML = hour;
+    min.innerHTML = minute;
+    sec.innerHTML = second;
+    sessionElement.innerHTML = session;
+    dateElement.innerHTML = dateString;
+}
 
-}, 1000)
-
+updateClock();
+setInterval(updateClock, 1000);

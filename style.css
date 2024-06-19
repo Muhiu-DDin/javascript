@@ -4,29 +4,16 @@
     box-sizing: border-box;
 }
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vmin;
+    padding: 10px 5rem;
+    margin: 2rem 0;
 }
-h1{
+.main{
     text-align: center;
-    font-size: 3rem;
     margin-top: 2rem;
 }
-.box{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:70px;
-    height:70px;
-    background-color: black;
-    color: #ffffff;
-    margin-left: 1rem;
-    border-radius: 10px;
-    font-size:1.5rem;
-}
-.sub{
-    position: relative;
-    top:2.5rem;
+.btn{
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
 }
