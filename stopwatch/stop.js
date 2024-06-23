@@ -18,7 +18,6 @@ starthtml.addEventListener("click" ,
 
             if(ms > 999){
                 sec++;
-                String(sec);
                 ms = 0 ;
             }
             if(sec > 59){
